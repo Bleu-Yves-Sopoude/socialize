@@ -1,4 +1,4 @@
-# School library
+# Socialize
 
 <a name="readme-top"></a>
 
