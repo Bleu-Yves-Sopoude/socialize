@@ -6,7 +6,7 @@
 
 - [School library](#school-library)
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 School-library ](#-school-library-)
+- [📖 Socialize ](#-socialize-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
@@ -21,7 +21,7 @@
   - [🙏 Acknowledgments ](#-acknowledgments-)
   - [📝 License ](#-license-)
 
-# 📖 School-library <a name="about-project"></a>
+# 📖 Socialize <a name="about-project"></a>
 
 **Socialize**  is a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
 
