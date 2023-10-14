@@ -4,7 +4,7 @@
 
 # 📗 Table of Contents
 
-- [School library](#school-library)
+- [Socialize](#socialize)
 - [📗 Table of Contents](#-table-of-contents)
 - [📖 Socialize ](#-socialize-)
   - [🛠 Built With ](#-built-with-)

@@ -1,4 +1,4 @@
-class AddCounterToPosts < ActiveRecord::Migration[7.1]
+class AddCountToPosts < ActiveRecord::Migration[7.0]
   def change
     add_column :posts, :likes_counter, :integer
     add_column :posts, :comments_counter, :integer
