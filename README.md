@@ -1,19 +1,12 @@
-# Socialize
-
-<a name="readme-top"></a>
-
 # 📗 Table of Contents
 
-- [School library](#school-library)
 - [📗 Table of Contents](#-table-of-contents)
-- [📖 Socialize ](#-socialize-)
+- [📖 TDD Solver ](#-tdd-solver-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
   - [💻 Getting Started ](#-getting-started-)
-    - [Prerequisites](#prerequisites)
     - [Setup](#setup)
-    - [Usage](#usage)
   - [👥 Authors ](#-authors-)
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
@@ -21,18 +14,20 @@
   - [🙏 Acknowledgments ](#-acknowledgments-)
   - [📝 License ](#-license-)
 
-# 📖 Socialize <a name="about-project"></a>
+<!-- PROJECT DESCRIPTION -->
 
-**Socialize**  is a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts.
+# 📖 My blog <a name="about-project"></a>
+
+**My blog** is ruby on rails MVC website
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
 <details>
-<summary>Language</summary>
+<summary>Ruby</summary>
   <ul>
-    <li><a href="https://www.ruby-lang.org/en/">Ruby</a></li>
+    <li><a href="https://rubygems.org">Ruby</a></li>
   </ul>
 </details>
 
@@ -40,63 +35,69 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **DB**
-- **Migration**
-
-
+- **Multiuser**
+- **Blog Posts**
+- **Likes and Comments**
+  
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-To get a local copy up and running, follow these steps.
-
-### Prerequisites
-
-In order to run this project you need:
-
-- Ruby
-- VS code (any code editor of your choice)
-
 ### Setup
 
 Clone this repository to your desired folder:
 
+Example commands:
+
 ```sh
-  git clone https://github.com/Bleu-Yves-Sopoude/socialize.git
+  git clone https://github.com/devendra-alt/my-blog.git
+  cd my-blog
+```
+### Install
+
+Install this project with:
+
+```sh
+  cd my-blog
+  bundle install
 ```
 
 ### Usage
 
 To run the project, execute the following command:
 
-```sh
-  ruby socialize.rb
 ```
+  rails serve
+```
+
+### Run tests
+
+To run tests, run the following command:
+
+```sh
+  rspec --format documentation
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Author**
+👤 **Devendra-alt**
 
-👤 **Bleu Yves Sopoude (MrBlue)**
+- GitHub: [@devendra-alt](https://github.com/devendra-alt)
+- Twitter: [@Devendra5101](https://twitter.com/Devendra5101)
+- LinkedIn: [Devendra Mulewa](https://linkedin.com/in/devendramulewa)
 
-- GitHub: [@Bleu-Yves-Sopoude](https://github.com/Bleu-Yves-Sopoude)
-- Linkedin: [@in/bleu-yves](https://www.linkedin.com/in/bleu-yves/)
-- GitHub: [@bleuYves](https://twitter.com/bleuYves)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Add UML Diagram**
-- [ ] **Adding  UI**
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+- [ ] **Front-end UI**
 
 <!-- CONTRIBUTING -->
 
@@ -112,7 +113,7 @@ Feel free to check the [issues page](../../issues/).
 
 ## ⭐️ Show your support <a name="support"></a>
 
-If you like this project please give it a star ⭐️.
+If you like this project kindly give star.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -120,14 +121,11 @@ If you like this project please give it a star ⭐️.
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I want to thank @microverse.
+I want to thank Microverse.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->
 
 ## 📝 License <a name="license"></a>
-
 This project is [MIT](./MIT.md) licensed.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
