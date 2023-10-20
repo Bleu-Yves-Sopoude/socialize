@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Posts', type: :request do
   describe 'GET users/:user_id/posts' do
     before :each do
-      get user_posts_path({ user_id:1})
+      get user_posts_path({ user_id: 1 })
     end
 
     it 'returns http success' do
