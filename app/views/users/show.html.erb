@@ -1,1 +1,22 @@
-<h1>List of individual User<h1>
+<section id='profile'>
+  <h1 class='title'>Profile</h1>
+  <div class='userProfile'>
+    <%# Intro card %>
+    <%= render partial: 'user', locals: { user: @user } %>
+
+    <%# bio card %>
+    <%= render partial: 'bio', locals: { user: @user } %>
+
+    <%# Post Summary %>
+    <div class='bioPostList'>
+      <%if @posts.count > 0%>
+        <% @user.recent_posts.each do |post| %>
+          <%= render partial: 'post', locals: { user: @user, post: post } %>
+        <%end%>
+        <button id='showPostsButton' type='button'><a href="/users/<%=@user.id%>/posts">See all posts</a></button>
+      </div>
+      <%else%>
+        <h2 class='noPosts'><%=@user.name%> has no posts</h2>
+      <%end%>
+  </div>
+</section>
