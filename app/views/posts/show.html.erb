@@ -5,20 +5,22 @@
 
     <div class='articleText'>
       <h3><%=@post.title%></h3>
-      <p class='postMetrics'>Comments: <%=@post.comments_counter%>, Likes: <%=@post.likes_counter%></p>
+      <p>Comments: <%= @post.comments_count %> , likes:  <%= @post.likes_count %></p>
       <p><%=@post.text%></p>
     </div>
-
-    <%if @post.recent_comments.count > 0%>
+    <%= render 'application/like_form', post: @post, user: @user %>
+    <%= link_to "Add a comment", new_user_post_comment_path(post_id: @post.id, user_id: @user.id), class: "btn btn-primary"%>
+    <%if @post.comments.count > 0%>
       <ul class='comments'>
-        <% @post.recent_comments.each do |comment| %>
-          <%commentor = @users.find(comment.user_id)%>
-          <li><%=commentor.name%>: <%=comment.text%></P>
+        <% @post.comments.each do |comment| %>
+          
+          <li><%=comment.user.name%>: <%=comment.text%></P>
         <%end%>
       </ul>
     <%else%>
       <h4 class='noComments'>Be the first to comment</h4>
     <%end%>
+    
   </div>
 </section>
 <h4 class='returnToPosts'><a href="/users/<%=@post.author_id%>/posts">Back to posts</a></h4>
