@@ -1,1 +1,24 @@
-<h1> List of individual Post<h1/>
+<section id='article'>
+  <h1 class= 'title'>Article</h1>
+
+  <div class='articlePage'>
+
+    <div class='articleText'>
+      <h3><%=@post.title%></h3>
+      <p class='postMetrics'>Comments: <%=@post.comments_counter%>, Likes: <%=@post.likes_counter%></p>
+      <p><%=@post.text%></p>
+    </div>
+
+    <%if @post.recent_comments.count > 0%>
+      <ul class='comments'>
+        <% @post.recent_comments.each do |comment| %>
+          <%commentor = @users.find(comment.user_id)%>
+          <li><%=commentor.name%>: <%=comment.text%></P>
+        <%end%>
+      </ul>
+    <%else%>
+      <h4 class='noComments'>Be the first to comment</h4>
+    <%end%>
+  </div>
+</section>
+<h4 class='returnToPosts'><a href="/users/<%=@post.author_id%>/posts">Back to posts</a></h4>
