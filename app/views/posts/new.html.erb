@@ -5,7 +5,7 @@
 
   <h1>Create a New Post</h1>
 
-  <%= form_with model: [@user, @post], local: true, html: { class: 'post-form' } do |form| %>
+  <%= form_with  model: @post, url: user_posts_path(user_id: @user.id) do |form| %>
     <div class="field">
       <%= form.label :title, class: 'form-label' %>
       <%= form.text_field :title, class: 'form-input' %>
