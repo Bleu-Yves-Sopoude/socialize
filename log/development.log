@@ -3377,3 +3377,20 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 15ms (Views: 10.5ms | ActiveRecord: 0.8ms | Allocations: 3835)
 
 
+Started GET "/users/1/" for 127.0.0.1 at 2023-10-21 07:28:22 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (62.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered application/_user.html.erb (Duration: 10.7ms | Allocations: 247)
+  Rendered application/_bio.html.erb (Duration: 1.0ms | Allocations: 142)
+  [1m[36mPost Count (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM (SELECT 1 AS one FROM "posts" WHERE "posts"."author_id" = $1 AND "posts"."author_id" = $2 ORDER BY "posts"."created_at" DESC LIMIT $3) subquery_for_count[0m  [["author_id", 1], ["author_id", 1], ["LIMIT", 3]]
+  ↳ app/views/users/show.html.erb:12
+  Rendered users/show.html.erb within layouts/application (Duration: 39.5ms | Allocations: 2170)
+  Rendered layout layouts/application.html.erb (Duration: 2945.4ms | Allocations: 41086)
+Completed 200 OK in 3402ms (Views: 2951.9ms | ActiveRecord: 74.4ms | Allocations: 59119)
+
+
