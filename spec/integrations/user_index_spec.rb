@@ -6,6 +6,13 @@ RSpec.describe 'users#index', type: :feature do
       User.create(name: 'David', photo: 'david.jpg', bio: 'Software Developer', posts_count: 0),
       User.create(name: 'Justin', photo: 'justin.jpg', bio: 'Software Developer', posts_count: 0)
     ]
+
+    @posts = [
+      @post1 = Post.create(author_id: @user, title: 'User Post 1', text: 'This is User Post 1'),
+      @post2 = Post.create(author_id: @user, title: 'User Post 2', text: 'This is User Post 2'),
+      @post3 = Post.create(author_id: @user, title: 'User Post 3', text: 'This is User Post 3')
+
+    ]
     visit users_path
   end
   describe '#index page' do
@@ -23,9 +30,9 @@ RSpec.describe 'users#index', type: :feature do
       end
     end
     it 'redirects me to that posts show page when I click on a post' do
-        post = @posts.first
-        click_link(post.title, match: :first) # Add match: :first to ensure the first matching link is clicked
-        expect(page).to have_current_path(user_post_path(user_id: @user, id: post))
+      page.all('div.col-lg-12.border.border-dark').each_with_index do |el, _i|
+        within(el) { expect(page).to have_current_path(user_post_path(post.author, post)) }
       end
-    end      
+    end
+  end
 end

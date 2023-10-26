@@ -28,16 +28,13 @@ RSpec.describe 'posts#index', type: :feature do
       expect(page).to have_content(@user.posts_count.to_s)
     end
     it 'can see posts title' do
-      page.all('div.col-lg-12.border.border-dark').each_with_index do | el, i|
+      page.all('div.col-lg-12.border.border-dark').each_with_index do |el, i|
         within(el) { expect(page).to have_content(@posts[i].title) }
-        
-        
-    
       end
     end
     it 'can see some of the bodys post' do
-      @posts.each do |post|
-        expect(page).to have_content(post.text.to_s)
+      page.all('div.col-lg-12.border.border-dark').each_with_index do |_el, i|
+        expect(page).to have_content(post[i].text)
       end
     end
     it 'can see the first comments on a post.' do
@@ -60,9 +57,9 @@ RSpec.describe 'posts#index', type: :feature do
   end
   describe 'GET show/page' do
     it 'redirects me to that posts show page, when I clicked on a post.' do
-      post = @posts.first
-      click_link(post.title)
-      expect(page).to have_current_path(user_post_path(post.author, post))
+      page.all('div.col-lg-12.border.border-dark').each_with_index do |el, _i|
+        within(el) { expect(page).to have_current_path(user_post_path(post.author, post)) }
+      end
     end
   end
 end

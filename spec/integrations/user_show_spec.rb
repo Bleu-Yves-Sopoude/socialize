@@ -17,22 +17,23 @@ RSpec.describe 'users#show', type: :feature do
     )
 
     @posts = [
-      Post.create(author_id: @user1, title: 'User 1 Post 1', text: 'This is User 1 Post 1',
-                  comments_count: 0, likes_count: 0),
-      Post.create(author_id: @user1, title: 'User 1 Post 2', text: 'This is User 1 Post 2',
-                  comments_count: 0, likes_count: 0),
-      Post.create(author_id: @user1, title: 'User 1 Post 3', text: 'This is User 1 Post 3',
-                  comments_count: 0, likes_count: 0),
-      Post.create(author_id: @user2, title: 'User 2 Post 1', text: 'This is User 2 Post 1',
-                  comments_count: 0, likes_count: 0),
-      Post.create(author_id: @user2, title: 'User 2 Post 2', text: 'This is User 2 Post 2',
-                  comments_count: 0, likes_count: 0),
-      Post.create(author_id: @user2, title: 'User 2 Post 3', text: 'This is User 2 Post 3',
-                  comments_count: 0, likes_count: 0)
+      Post.create(author_id: @user1, title: 'User 1 Post 1', text: 'This is User 1 Post 1', comments_count: 0,
+                  likes_count: 0),
+      Post.create(author_id: @user1, title: 'User 1 Post 2', text: 'This is User 1 Post 2', comments_count: 0,
+                  likes_count: 0),
+      Post.create(author_id: @user1, title: 'User 1 Post 3', text: 'This is User 1 Post 3', comments_count: 0,
+                  likes_count: 0),
+      Post.create(author_id: @user2, title: 'User 2 Post 1', text: 'This is User 2 Post 1', comments_count: 0,
+                  likes_count: 0),
+      Post.create(author_id: @user2, title: 'User 2 Post 2', text: 'This is User 2 Post 2', comments_count: 0,
+                  likes_count: 0),
+      Post.create(author_id: @user2, title: 'User 2 Post 3', text: 'This is User 2 Post 3', comments_count: 0,
+                  likes_count: 0)
     ]
 
     visit users_url
   end
+
   describe '#show page' do
     before(:each) do
       visit user_path(@user1)
@@ -61,21 +62,26 @@ RSpec.describe 'users#show', type: :feature do
     end
 
     it 'can see a button to view all user posts' do
-      expect(page).to have_selector('button', text: 'See all posts')
+      page.all('div.col-lg-12.border.border-dark').each_with_index do |_el, _i|
+        expect(page).to have_selector('button', text: 'See all posts')
+      end
     end
 
     it 'redirects to the user posts index page when "See all posts" button is clicked' do
-      visit user_path(@user1)
-      click_link 'See all posts'
-      expect(page).to have_current_path(user_posts_path(@user1))
+      page.all('div.col-lg-12.border.border-dark').each_with_index do |_el, _i|
+        expect(page).to have_link('See all posts', href: user_posts_path(@user1))
+      end
     end
   end
+
   describe 'GET/posts/show' do
-    it ',redirects me to post show page, when I clicked a user post' do
-      visit user_path(@user1)
-      post = @user1.recent_posts.first
-      click_link(post.title)
-      expect(page).to have_current_path(user_post_path(@user1, post.id))
+    it 'redirects me to post show page when I click a user post' do
+      page.all('div.col-lg-12.border.border-dark').each_with_index do |el, i|
+        within(el) do
+          post = @user1.posts[i]
+          expect(page).to have_link(post.title, href: user_post_path(post.author_id, post))
+        end
+      end
     end
   end
 end

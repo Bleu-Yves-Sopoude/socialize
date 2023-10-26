@@ -19,7 +19,9 @@ RSpec.describe 'posts#show', type: :feature do
       visit user_posts_path(@user, @post3)
     end
     it 'can see posts title' do
-      expect(page).to have_content(@post3.title.to_s)
+      page.all('div.col-lg-12.border.border-dark').each_with_index do |el, i|
+        within(el) { expect(page).to have_content(@posts[i].title) }
+      end
     end
     it 'can see who wrote the post.' do
       expect(page).to have_content(@user.name.to_s)
@@ -31,7 +33,9 @@ RSpec.describe 'posts#show', type: :feature do
       expect(page).to have_content(@post3.likes_count.to_s)
     end
     it 'can see the post body' do
-      expect(page).to have_content(@post3.text.to_s)
+      page.all('div.col-lg-12.border.border-dark').each_with_index do |el, i|
+        within(el) { expect(page).to have_content(@posts[i].text) }
+      end
     end
     it 'can see the username of each commentor' do
       @post1.recent_comment.each do |comment|
