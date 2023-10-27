@@ -9721,3 +9721,135 @@ Completed 200 OK in 54ms (Views: 39.9ms | ActiveRecord: 1.2ms | Allocations: 561
 >>>>>>> dev
 
 
+Started GET "/" for 127.0.0.1 at 2023-10-27 12:53:00 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 165ms (ActiveRecord: 0.0ms | Allocations: 2671)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-10-27 12:53:01 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 3.0ms | Allocations: 725)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 93.2ms | Allocations: 3553)
+  Rendered layout layouts/application.html.erb (Duration: 1647.7ms | Allocations: 39396)
+Completed 200 OK in 1746ms (Views: 1658.9ms | ActiveRecord: 8.3ms | Allocations: 51527)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-10-27 12:53:07 +0000
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"b@g.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (14.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "b@g.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 986ms (ActiveRecord: 15.1ms | Allocations: 5632)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-27 12:53:08 +0000
+Processing by UsersController#index as TURBO_STREAM
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:4
+  Rendered application/_user.html.erb (Duration: 1.5ms | Allocations: 227)
+  Rendered users/index.html.erb within layouts/application (Duration: 28.2ms | Allocations: 1317)
+  Rendered layout layouts/application.html.erb (Duration: 105.9ms | Allocations: 3553)
+Completed 200 OK in 116ms (Views: 107.8ms | ActiveRecord: 1.0ms | Allocations: 5664)
+
+
+Started GET "/example.com" for 127.0.0.1 at 2023-10-27 12:53:09 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/example.com"):
+  
+Started GET "/users/1" for 127.0.0.1 at 2023-10-27 12:53:13 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering users/show.html.erb within layouts/application
+  Rendered application/_user.html.erb (Duration: 0.2ms | Allocations: 18)
+  Rendered application/_bio.html.erb (Duration: 26.2ms | Allocations: 141)
+  Rendered users/show.html.erb within layouts/application (Duration: 51.1ms | Allocations: 1846)
+  Rendered layout layouts/application.html.erb (Duration: 51.6ms | Allocations: 1934)
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 0.7ms | Allocations: 4835)
+
+
+  
+ActionView::Template::Error (undefined method `any?' for nil:NilClass):
+    10: 
+    11:     <%# Post Summary %>
+    12:     <div class='bioPostList'>
+    13:       <% if @posts.any? %>
+    14:         <% @user.recent_posts.each do |post| %>
+    15:           <%= render partial: 'post', locals: { user: @user, post: post } %>
+    16:         <% end %>
+  
+app/views/users/show.html.erb:13
+Started GET "/users/example.com" for 127.0.0.1 at 2023-10-27 12:53:14 +0000
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"example"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+Completed 404 Not Found in 9ms (ActiveRecord: 0.8ms | Allocations: 2404)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=example):
+  
+app/controllers/users_controller.rb:7:in `show'
+Started GET "/" for 127.0.0.1 at 2023-10-27 12:53:26 +0000
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:4
+  Rendered application/_user.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered users/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 708)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 2857)
+Completed 200 OK in 15ms (Views: 9.1ms | ActiveRecord: 1.5ms | Allocations: 4548)
+
+
+Started GET "/example.com" for 127.0.0.1 at 2023-10-27 12:53:26 +0000
+  
+ActionController::RoutingError (No route matches [GET] "/example.com"):
+  
+Started GET "/sign_out_user" for 127.0.0.1 at 2023-10-27 12:53:35 +0000
+Processing by UsersController#sign_out_user as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:21:in `current_user'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 89ms (ActiveRecord: 1.0ms | Allocations: 10798)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-27 12:53:35 +0000
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 288)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-10-27 12:53:35 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 132)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1212)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 3352)
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 3996)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-10-27 12:53:37 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 30.6ms | Allocations: 234)
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 157)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 158.8ms | Allocations: 3255)
+  Rendered layout layouts/application.html.erb (Duration: 167.3ms | Allocations: 5434)
+Completed 200 OK in 174ms (Views: 171.6ms | ActiveRecord: 0.0ms | Allocations: 6561)
+
+
