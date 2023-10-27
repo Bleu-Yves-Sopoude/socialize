@@ -28,7 +28,6 @@ class PostsController < ApplicationController
     @user = User.find(params[:user_id])
     @posts = Post.where(author_id: @user.id).includes(:comments, :user).paginate(page: params[:page], per_page: 10)
   end
-  
 
   private
 
