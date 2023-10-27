@@ -2172,3 +2172,130 @@ Processing by Devise::SessionsController#new as TURBO_STREAM
 Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 0.0ms | Allocations: 3983)
 
 
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-10-27 11:51:16 +0000
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 3.8ms | Allocations: 725)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 154.1ms | Allocations: 4075)
+  Rendered layout layouts/application.html.erb (Duration: 2784.0ms | Allocations: 39986)
+Completed 200 OK in 3187ms (Views: 2881.3ms | ActiveRecord: 9.5ms | Allocations: 54594)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-10-27 11:51:27 +0000
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"b@g.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (13.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "b@g.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/sign_out_user
+Completed 303 See Other in 535ms (ActiveRecord: 14.1ms | Allocations: 5715)
+
+
+Started GET "/sign_out_user" for 127.0.0.1 at 2023-10-27 11:51:28 +0000
+Processing by UsersController#sign_out_user as TURBO_STREAM
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 63ms (ActiveRecord: 0.4ms | Allocations: 2665)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-27 11:51:28 +0000
+Processing by UsersController#index as TURBO_STREAM
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 293)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-10-27 11:51:28 +0000
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 132)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.1ms | Allocations: 1223)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 3325)
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 0.0ms | Allocations: 3976)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-10-27 11:51:30 +0000
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"b@g.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "b@g.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 366ms (ActiveRecord: 0.4ms | Allocations: 2416)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-27 11:51:30 +0000
+Processing by UsersController#index as TURBO_STREAM
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 21.9ms | Allocations: 104)
+  Rendered layout layouts/application.html.erb (Duration: 27.0ms | Allocations: 2312)
+Completed 200 OK in 36ms (Views: 29.8ms | ActiveRecord: 0.4ms | Allocations: 4387)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-10-27 11:51:34 +0000
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 7ms (ActiveRecord: 0.4ms | Allocations: 1608)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-27 11:51:34 +0000
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 2116)
+Completed 200 OK in 10ms (Views: 5.2ms | ActiveRecord: 0.4ms | Allocations: 3799)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-27 11:51:36 +0000
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 2115)
+Completed 200 OK in 11ms (Views: 5.3ms | ActiveRecord: 0.4ms | Allocations: 3780)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-10-27 11:51:47 +0000
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms | Allocations: 1734)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-27 11:51:47 +0000
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 2115)
+Completed 200 OK in 12ms (Views: 7.4ms | ActiveRecord: 0.3ms | Allocations: 3774)
+
+
+Started GET "/sign_out_user" for 127.0.0.1 at 2023-10-27 11:51:56 +0000
+Processing by UsersController#sign_out_user as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.3ms | Allocations: 1762)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-27 11:51:56 +0000
+Processing by UsersController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 303)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-10-27 11:51:56 +0000
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 132)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1212)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 3313)
+Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 0.0ms | Allocations: 3951)
+
+
