@@ -15,4 +15,9 @@ class ApplicationController < ActionController::Base
       u.permit(:name, :email, :bio, :photo, :password, :current_password)
     end
   end
+  helper_method :current_user
+
+  def current_user
+    User.first
+  end
 end

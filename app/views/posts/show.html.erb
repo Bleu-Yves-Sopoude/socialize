@@ -1,1 +1,26 @@
-<h1> List of individual Post<h1/>
+<section id='article'>
+  <h1 class= 'title'>Article</h1>
+
+  <div class='articlePage'>
+
+    <div class='articleText'>
+      <h3><%=@post.title%></h3>
+      <p>Comments: <%= @post.comments_count %> , likes:  <%= @post.likes_count %></p>
+      <p><%=@post.text%></p>
+    </div>
+    <%= render 'application/like_form', post: @post, user: @user %>
+    <%= link_to "Add a comment", new_user_post_comment_path(post_id: @post.id, user_id: @user.id), class: "btn btn-primary"%>
+    <%if @post.comments.count > 0%>
+      <ul class='comments'>
+        <% @post.comments.each do |comment| %>
+          
+          <li><%=comment.user.name%>: <%=comment.text%></P>
+        <%end%>
+      </ul>
+    <%else%>
+      <h4 class='noComments'>Be the first to comment</h4>
+    <%end%>
+    
+  </div>
+</section>
+<h4 class='returnToPosts'><a href="/users/<%=@post.author_id%>/posts">Back to posts</a></h4>
