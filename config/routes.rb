@@ -1,13 +1,11 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  get '/users', to: 'users#index' , as: 'users'
-  get '/users/:id', to: 'users#show' , as: 'user'
-  get '/users/:user_id/posts', to: 'posts#index', as: 'user_posts'
-  get '/users/:user_id/posts/:id', to: 'posts#show', as: 'user_post'
-
-   get '/home', to: 'app#home', as:'home'
-  root 'app#home'
-  # Defines the root path route ("/")
-  # root "articles#index"
+  get '/sign_out_user', to: 'users#sign_out_user', as: 'sign_out_user'
+  devise_for :users
+  root 'users#index'
+  resources :users, only: %i[index show] do
+    resources :posts, only: %i[index show new create destroy] do
+      resources :comments, only: %i[new create destroy]
+      resources :likes, only: %i[new create]
+    end
+  end
 end
