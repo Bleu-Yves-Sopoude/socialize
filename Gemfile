@@ -77,9 +77,5 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
 end
-<<<<<<< HEAD
 
 gem 'devise', '~> 4.9'
-gem 'rubocop', '>= 1.0', '< 2.0'
-=======
->>>>>>> dev
