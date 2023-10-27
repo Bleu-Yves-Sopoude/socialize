@@ -4,7 +4,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.includes(posts: %i[comments user]).find(params[:id])
-    @posts = @user.recent_posts
+    @user = User.find(params[:id])
+  end
+
+  def sign_out_user
+    sign_out(current_user)
+    redirect_to root_path, notice: 'Signed out successfully'
   end
 end
