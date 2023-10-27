@@ -17783,3 +17783,365 @@ Processing by UsersController#index as HTML
   Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 1860)
 Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.4ms | Allocations: 2071)
   [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (107.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (29.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (207.6ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (990.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "created_at", "updated_at", "posts_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "John"], ["photo", "john.jpg"], ["bio", "Web Developer"], ["created_at", "2023-10-27 10:42:13.350783"], ["updated_at", "2023-10-27 10:42:13.350783"], ["posts_count", 0]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/808/posts" for 127.0.0.1 at 2023-10-27 10:42:15 +0000
+Processing by PostsController#index as HTML
+  Parameters: {"user_id"=>"808"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 808], ["LIMIT", 1]]
+  [1m[36mPost Load (11.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["author_id", 808], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 197ms (ActiveRecord: 0.6ms | Allocations: 2803)
+  [1m[36mTRANSACTION (24.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "created_at", "updated_at", "posts_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "John"], ["photo", "john.jpg"], ["bio", "Web Developer"], ["created_at", "2023-10-27 10:42:16.533146"], ["updated_at", "2023-10-27 10:42:16.533146"], ["posts_count", 0]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/809/posts" for 127.0.0.1 at 2023-10-27 10:42:16 +0000
+Processing by PostsController#index as HTML
+  Parameters: {"user_id"=>"809"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 809], ["LIMIT", 1]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["author_id", 809], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.5ms | Allocations: 558)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "created_at", "updated_at", "posts_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "John"], ["photo", "john.jpg"], ["bio", "Web Developer"], ["created_at", "2023-10-27 10:42:16.546519"], ["updated_at", "2023-10-27 10:42:16.546519"], ["posts_count", 0]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/810/posts" for 127.0.0.1 at 2023-10-27 10:42:16 +0000
+Processing by PostsController#index as HTML
+  Parameters: {"user_id"=>"810"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 810], ["LIMIT", 1]]
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["author_id", 810], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.4ms | Allocations: 554)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "created_at", "updated_at", "posts_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "John"], ["photo", "john.jpg"], ["bio", "Web Developer"], ["created_at", "2023-10-27 10:42:16.561608"], ["updated_at", "2023-10-27 10:42:16.561608"], ["posts_count", 0]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/811/posts" for 127.0.0.1 at 2023-10-27 10:42:16 +0000
+Processing by PostsController#index as HTML
+  Parameters: {"user_id"=>"811"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 811], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["author_id", 811], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.5ms | Allocations: 554)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "created_at", "updated_at", "posts_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "John"], ["photo", "john.jpg"], ["bio", "Web Developer"], ["created_at", "2023-10-27 10:42:16.576355"], ["updated_at", "2023-10-27 10:42:16.576355"], ["posts_count", 0]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/812/posts" for 127.0.0.1 at 2023-10-27 10:42:16 +0000
+Processing by PostsController#index as HTML
+  Parameters: {"user_id"=>"812"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 812], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["author_id", 812], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.9ms | Allocations: 554)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "created_at", "updated_at", "posts_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "John"], ["photo", "john.jpg"], ["bio", "Web Developer"], ["created_at", "2023-10-27 10:42:16.593558"], ["updated_at", "2023-10-27 10:42:16.593558"], ["posts_count", 0]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/813/posts" for 127.0.0.1 at 2023-10-27 10:42:16 +0000
+Processing by PostsController#index as HTML
+  Parameters: {"user_id"=>"813"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 813], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["author_id", 813], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 1.2ms | Allocations: 554)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "created_at", "updated_at", "posts_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "John"], ["photo", "john.jpg"], ["bio", "Web Developer"], ["created_at", "2023-10-27 10:42:16.609699"], ["updated_at", "2023-10-27 10:42:16.609699"], ["posts_count", 0]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/814/posts" for 127.0.0.1 at 2023-10-27 10:42:16 +0000
+Processing by PostsController#index as HTML
+  Parameters: {"user_id"=>"814"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 814], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["author_id", 814], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.2ms | Allocations: 554)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "created_at", "updated_at", "posts_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "John"], ["photo", "john.jpg"], ["bio", "Web Developer"], ["created_at", "2023-10-27 10:42:16.642138"], ["updated_at", "2023-10-27 10:42:16.642138"], ["posts_count", 0]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/815/posts" for 127.0.0.1 at 2023-10-27 10:42:16 +0000
+Processing by PostsController#index as HTML
+  Parameters: {"user_id"=>"815"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 815], ["LIMIT", 1]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["author_id", 815], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms | Allocations: 554)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "created_at", "updated_at", "posts_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "John"], ["photo", "john.jpg"], ["bio", "Web Developer"], ["created_at", "2023-10-27 10:42:16.655638"], ["updated_at", "2023-10-27 10:42:16.655638"], ["posts_count", 0]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/816/posts" for 127.0.0.1 at 2023-10-27 10:42:16 +0000
+Processing by PostsController#index as HTML
+  Parameters: {"user_id"=>"816"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 816], ["LIMIT", 1]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["author_id", 816], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.3ms | Allocations: 554)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["author_id", 808], ["LIMIT", 11]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["author_id", 809], ["LIMIT", 11]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["author_id", 810], ["LIMIT", 11]]
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["author_id", 811], ["LIMIT", 11]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["author_id", 812], ["LIMIT", 11]]
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["author_id", 813], ["LIMIT", 11]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["author_id", 814], ["LIMIT", 11]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["author_id", 815], ["LIMIT", 11]]
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 /* loading for inspect */ LIMIT $2[0m  [["author_id", 816], ["LIMIT", 11]]
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "created_at", "updated_at", "posts_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "John"], ["photo", "john.jpg"], ["bio", "Web Developer"], ["created_at", "2023-10-27 11:01:43.211484"], ["updated_at", "2023-10-27 11:01:43.211484"], ["posts_count", 0]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/817/posts" for 127.0.0.1 at 2023-10-27 11:01:43 +0000
+Processing by PostsController#index as HTML
+  Parameters: {"user_id"=>"817"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 817], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered application/_user.html.erb (Duration: 14.4ms | Allocations: 236)
+  [1m[36mPost Load (1.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 LIMIT $2 OFFSET $3[0m  [["author_id", 817], ["LIMIT", 10], ["OFFSET", 0]]
+  Rendered posts/index.html.erb within layouts/application (Duration: 100.9ms | Allocations: 1587)
+  Rendered layout layouts/application.html.erb (Duration: 4522.5ms | Allocations: 36217)
+Completed 200 OK in 4814ms (Views: 4556.8ms | ActiveRecord: 2.2ms | Allocations: 40832)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "created_at", "updated_at", "posts_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "John"], ["photo", "john.jpg"], ["bio", "Web Developer"], ["created_at", "2023-10-27 11:01:48.916509"], ["updated_at", "2023-10-27 11:01:48.916509"], ["posts_count", 0]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/818/posts" for 127.0.0.1 at 2023-10-27 11:01:48 +0000
+Processing by PostsController#index as HTML
+  Parameters: {"user_id"=>"818"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 818], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered application/_user.html.erb (Duration: 0.1ms | Allocations: 15)
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 LIMIT $2 OFFSET $3[0m  [["author_id", 818], ["LIMIT", 10], ["OFFSET", 0]]
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 321)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 1625)
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.7ms | Allocations: 2056)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "created_at", "updated_at", "posts_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "John"], ["photo", "john.jpg"], ["bio", "Web Developer"], ["created_at", "2023-10-27 11:01:48.932228"], ["updated_at", "2023-10-27 11:01:48.932228"], ["posts_count", 0]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/819/posts" for 127.0.0.1 at 2023-10-27 11:01:48 +0000
+Processing by PostsController#index as HTML
+  Parameters: {"user_id"=>"819"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 819], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered application/_user.html.erb (Duration: 0.1ms | Allocations: 15)
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 LIMIT $2 OFFSET $3[0m  [["author_id", 819], ["LIMIT", 10], ["OFFSET", 0]]
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 321)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 1625)
+Completed 200 OK in 6ms (Views: 3.0ms | ActiveRecord: 1.0ms | Allocations: 2046)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "created_at", "updated_at", "posts_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "John"], ["photo", "john.jpg"], ["bio", "Web Developer"], ["created_at", "2023-10-27 11:01:48.950730"], ["updated_at", "2023-10-27 11:01:48.950730"], ["posts_count", 0]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/820/posts" for 127.0.0.1 at 2023-10-27 11:01:48 +0000
+Processing by PostsController#index as HTML
+  Parameters: {"user_id"=>"820"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 820], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered application/_user.html.erb (Duration: 0.1ms | Allocations: 15)
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 LIMIT $2 OFFSET $3[0m  [["author_id", 820], ["LIMIT", 10], ["OFFSET", 0]]
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 321)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 1625)
+Completed 200 OK in 6ms (Views: 3.7ms | ActiveRecord: 0.7ms | Allocations: 2046)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "created_at", "updated_at", "posts_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "John"], ["photo", "john.jpg"], ["bio", "Web Developer"], ["created_at", "2023-10-27 11:01:48.999507"], ["updated_at", "2023-10-27 11:01:48.999507"], ["posts_count", 0]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/821/posts" for 127.0.0.1 at 2023-10-27 11:01:49 +0000
+Processing by PostsController#index as HTML
+  Parameters: {"user_id"=>"821"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 821], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered application/_user.html.erb (Duration: 0.1ms | Allocations: 15)
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 LIMIT $2 OFFSET $3[0m  [["author_id", 821], ["LIMIT", 10], ["OFFSET", 0]]
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 321)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | Allocations: 1625)
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 0.9ms | Allocations: 2046)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "created_at", "updated_at", "posts_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "John"], ["photo", "john.jpg"], ["bio", "Web Developer"], ["created_at", "2023-10-27 11:01:49.015904"], ["updated_at", "2023-10-27 11:01:49.015904"], ["posts_count", 0]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/822/posts" for 127.0.0.1 at 2023-10-27 11:01:49 +0000
+Processing by PostsController#index as HTML
+  Parameters: {"user_id"=>"822"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 822], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered application/_user.html.erb (Duration: 0.1ms | Allocations: 15)
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 LIMIT $2 OFFSET $3[0m  [["author_id", 822], ["LIMIT", 10], ["OFFSET", 0]]
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 321)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | Allocations: 1625)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.7ms | Allocations: 2046)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "created_at", "updated_at", "posts_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "John"], ["photo", "john.jpg"], ["bio", "Web Developer"], ["created_at", "2023-10-27 11:01:49.336796"], ["updated_at", "2023-10-27 11:01:49.336796"], ["posts_count", 0]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/823/posts" for 127.0.0.1 at 2023-10-27 11:01:49 +0000
+Processing by PostsController#index as HTML
+  Parameters: {"user_id"=>"823"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 823], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered application/_user.html.erb (Duration: 0.1ms | Allocations: 15)
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 LIMIT $2 OFFSET $3[0m  [["author_id", 823], ["LIMIT", 10], ["OFFSET", 0]]
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 322)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 1639)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.7ms | Allocations: 2061)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "created_at", "updated_at", "posts_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "John"], ["photo", "john.jpg"], ["bio", "Web Developer"], ["created_at", "2023-10-27 11:01:49.386142"], ["updated_at", "2023-10-27 11:01:49.386142"], ["posts_count", 0]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/824/posts" for 127.0.0.1 at 2023-10-27 11:01:49 +0000
+Processing by PostsController#index as HTML
+  Parameters: {"user_id"=>"824"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 824], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered application/_user.html.erb (Duration: 0.2ms | Allocations: 15)
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 LIMIT $2 OFFSET $3[0m  [["author_id", 824], ["LIMIT", 10], ["OFFSET", 0]]
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 321)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 1635)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.5ms | Allocations: 2057)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "created_at", "updated_at", "posts_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "John"], ["photo", "john.jpg"], ["bio", "Web Developer"], ["created_at", "2023-10-27 11:01:49.405808"], ["updated_at", "2023-10-27 11:01:49.405808"], ["posts_count", 0]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users/825/posts" for 127.0.0.1 at 2023-10-27 11:01:49 +0000
+Processing by PostsController#index as HTML
+  Parameters: {"user_id"=>"825"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 825], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  Rendered application/_user.html.erb (Duration: 0.1ms | Allocations: 15)
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."author_id" = $1 LIMIT $2 OFFSET $3[0m  [["author_id", 825], ["LIMIT", 10], ["OFFSET", 0]]
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 321)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 1625)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.7ms | Allocations: 2046)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "created_at", "updated_at", "posts_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Mary"], ["photo", "mary.jpg"], ["bio", "Software Developer"], ["created_at", "2023-10-27 11:03:28.536043"], ["updated_at", "2023-10-27 11:03:28.536043"], ["posts_count", 0]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "created_at", "updated_at", "posts_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "David"], ["photo", "david.jpg"], ["bio", "Software Developer"], ["created_at", "2023-10-27 11:03:28.539357"], ["updated_at", "2023-10-27 11:03:28.539357"], ["posts_count", 0]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "created_at", "updated_at", "posts_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Justin"], ["photo", "justin.jpg"], ["bio", "Software Developer"], ["created_at", "2023-10-27 11:03:28.541063"], ["updated_at", "2023-10-27 11:03:28.541063"], ["posts_count", 0]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users" for 127.0.0.1 at 2023-10-27 11:03:28 +0000
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered application/_user.html.erb (Duration: 26.5ms | Allocations: 241)
+  Rendered application/_user.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered application/_user.html.erb (Duration: 0.1ms | Allocations: 14)
+  Rendered application/_user.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered application/_user.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered application/_user.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered application/_user.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered users/index.html.erb within layouts/application (Duration: 181.5ms | Allocations: 1561)
+  Rendered layout layouts/application.html.erb (Duration: 1713.5ms | Allocations: 32820)
+Completed 200 OK in 2426ms (Views: 1876.7ms | ActiveRecord: 0.8ms | Allocations: 36717)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "created_at", "updated_at", "posts_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Mary"], ["photo", "mary.jpg"], ["bio", "Software Developer"], ["created_at", "2023-10-27 11:03:32.516253"], ["updated_at", "2023-10-27 11:03:32.516253"], ["posts_count", 0]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "created_at", "updated_at", "posts_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "David"], ["photo", "david.jpg"], ["bio", "Software Developer"], ["created_at", "2023-10-27 11:03:32.519310"], ["updated_at", "2023-10-27 11:03:32.519310"], ["posts_count", 0]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "created_at", "updated_at", "posts_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Justin"], ["photo", "justin.jpg"], ["bio", "Software Developer"], ["created_at", "2023-10-27 11:03:32.523428"], ["updated_at", "2023-10-27 11:03:32.523428"], ["posts_count", 0]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users" for 127.0.0.1 at 2023-10-27 11:03:32 +0000
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered application/_user.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered application/_user.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered application/_user.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered application/_user.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered application/_user.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered application/_user.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered application/_user.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered users/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 621)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 1933)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.4ms | Allocations: 2153)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "created_at", "updated_at", "posts_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Mary"], ["photo", "mary.jpg"], ["bio", "Software Developer"], ["created_at", "2023-10-27 11:03:32.542169"], ["updated_at", "2023-10-27 11:03:32.542169"], ["posts_count", 0]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "created_at", "updated_at", "posts_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "David"], ["photo", "david.jpg"], ["bio", "Software Developer"], ["created_at", "2023-10-27 11:03:32.544750"], ["updated_at", "2023-10-27 11:03:32.544750"], ["posts_count", 0]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "created_at", "updated_at", "posts_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Justin"], ["photo", "justin.jpg"], ["bio", "Software Developer"], ["created_at", "2023-10-27 11:03:32.546527"], ["updated_at", "2023-10-27 11:03:32.546527"], ["posts_count", 0]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users" for 127.0.0.1 at 2023-10-27 11:03:32 +0000
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered application/_user.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered application/_user.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered application/_user.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered application/_user.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered application/_user.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered application/_user.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered application/_user.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered users/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 621)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 1933)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.4ms | Allocations: 2144)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "created_at", "updated_at", "posts_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Mary"], ["photo", "mary.jpg"], ["bio", "Software Developer"], ["created_at", "2023-10-27 11:03:32.569347"], ["updated_at", "2023-10-27 11:03:32.569347"], ["posts_count", 0]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "created_at", "updated_at", "posts_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "David"], ["photo", "david.jpg"], ["bio", "Software Developer"], ["created_at", "2023-10-27 11:03:32.573192"], ["updated_at", "2023-10-27 11:03:32.573192"], ["posts_count", 0]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "photo", "bio", "created_at", "updated_at", "posts_count") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Justin"], ["photo", "justin.jpg"], ["bio", "Software Developer"], ["created_at", "2023-10-27 11:03:32.575685"], ["updated_at", "2023-10-27 11:03:32.575685"], ["posts_count", 0]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/users" for 127.0.0.1 at 2023-10-27 11:03:32 +0000
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered application/_user.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered application/_user.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered application/_user.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered application/_user.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered application/_user.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered application/_user.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered application/_user.html.erb (Duration: 0.0ms | Allocations: 15)
+  Rendered users/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 621)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 1933)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.3ms | Allocations: 2144)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
