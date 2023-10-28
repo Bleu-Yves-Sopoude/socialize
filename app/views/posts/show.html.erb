@@ -7,6 +7,9 @@
       <h3><%=@post.title%></h3>
       <p>Comments: <%= @post.comments_count %> , likes:  <%= @post.likes_count %></p>
       <p><%=@post.text%></p>
+      <% if can?(:destroy, @post) %>
+      <%= button_to 'Delete Post', user_post_path(@post.user, @post), method: :delete, class: 'btn btn-danger' %>
+    <% end %>
     </div>
     <%= render 'application/like_form', post: @post, user: @user %>
     <%= link_to "Add a comment", new_user_post_comment_path(post_id: @post.id, user_id: @user.id), class: "btn btn-primary"%>
@@ -14,7 +17,9 @@
       <ul class='comments'>
         <% @post.comments.each do |comment| %>
           
-          <li><%=comment.user.name%>: <%=comment.text%></P>
+          <p><%= comment.user.name %>: <%= comment.text %><% if can?(:destroy, comment) %>
+          <%= button_to 'Delete Comment', user_post_comment_path(@user, @post, comment), method: :delete, class: 'btn btn-danger' %>
+        <% end %></p>
         <%end%>
       </ul>
     <%else%>

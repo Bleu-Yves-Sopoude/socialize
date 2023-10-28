@@ -10,6 +10,11 @@
         <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: 'Username', class: 'border my-3 py-1 px-3' %>
       </div>
 
+      <div class="field">
+    <%= f.label :role %><br />
+    <%= f.select :role, User::ROLES, class: 'form-select' %>
+  </div>
+
       <div class="field my-5">
         <%= f.label :email %><br />
         <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email', class: 'border my-3 py-1 px-3' %>
